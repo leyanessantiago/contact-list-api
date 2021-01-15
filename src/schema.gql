@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Contact {
+  id: Int!
+  name: String!
+  email: String!
+  address: String!
+  phone: String!
+  avatar: String!
+}
+
+type ContactsResponse {
+  data: [Contact!]!
+  count: Int!
+}
+
+type Query {
+  contacts(searchStrings: [String], page: Int, limit: Int): ContactsResponse!
+  contact(id: Int!): Contact!
+}
+
+type Mutation {
+  createContact(createContactInput: CreateContactInput!): Contact!
+  updateContact(updateContactInput: UpdateContactInput!): Contact!
+  removeContact(id: Int!): Contact!
+}
+
+input CreateContactInput {
+  name: String!
+  email: String!
+  address: String!
+  phone: String!
+  avatar: String!
+}
+
+input UpdateContactInput {
+  name: String
+  email: String
+  address: String
+  phone: String
+  avatar: String
+  id: Int!
+}
