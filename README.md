@@ -32,6 +32,17 @@
 $ npm install
 ```
 
+## Setting Up Database
+
+Create a server at localhost:5432 named `db` with `user:postgres/password:randompassword`.
+
+```bash
+# Run migration
+$ npx prisma migrate dev --name init --preview-feature
+```
+
+The first time the app runs, and the database is empty, it will do a seed with mock data.
+
 ## Running the app
 
 ```bash
